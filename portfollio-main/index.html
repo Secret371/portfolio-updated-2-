@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandrakanta Barik — Java Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
+
+<!-- ═══ 3D CODE LOGO INTRO ═══ -->
+<div id="intro-screen">
+  <canvas id="introMatrix"></canvas>
+  <div class="intro-grid"></div>
+  <div class="intro-particles" id="introParticles"></div>
+
+  <div class="logo3d-wrap">
+    <div class="logo3d" id="logo3d">
+      <div class="logo-face front"><span class="logo-code">&lt;/&gt;</span></div>
+      <div class="logo-face back"><span class="logo-code">{ }</span></div>
+      <div class="logo-face right"><span class="logo-code">#</span></div>
+      <div class="logo-face left"><span class="logo-code">( )</span></div>
+      <div class="logo-face top"><span class="logo-code">=&gt;</span></div>
+      <div class="logo-face bottom"><span class="logo-code">;</span></div>
+    </div>
+    <div class="logo-glow-ring"></div>
+    <div class="logo-orbit"><div class="orbit-dot"></div></div>
+    <div class="logo-orbit orbit2"><div class="orbit-dot od2"></div></div>
+  </div>
+
+  <div class="intro-text">
+    <div class="intro-name">CHANDRAKANTA BARIK</div>
+    <div class="intro-role" id="introRole">Java Developer · Open Source</div>
+  </div>
+
+  <div class="intro-bar-wrap"><div class="intro-bar" id="introBar"></div></div>
+  <div class="intro-pct" id="introPct">0%</div>
+
+  <div class="intro-scanline"></div>
+</div>
+
+<!-- MATRIX RAIN CANVAS -->
+<canvas id="matrixCanvas"></canvas>
+
+<!-- BG -->
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand"><div class="brand-dot"></div>ck.dev</div>
+  <div class="nav-status" id="navStatus">
+    <span class="ns-dot"></span>
+    <span class="ns-text" id="nsText">currently_working_on: Spring Boot API</span>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="Chandrakanta_Barik_Resume.pdf" download>Resume</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><div class="eyebrow-dot"></div>Available for Opportunities</div>
+    <h1 class="hero-name" id="heroName">
+      <span class="n1">CHANDRA</span>
+      <span class="n2">KANTA</span>
+    </h1>
+    <div class="hero-role-wrap">
+      <span class="hero-role" id="typewriter">Java Developer</span>
+      <span class="role-cursor"></span>
+    </div>
+    <p class="hero-desc">Computer Science Engineering student crafting <span class="hl">scalable backend systems</span> with Java &amp; Spring Boot. Open source contributor building <span class="hl">impactful products</span>.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects →</button>
+      <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+      <a class="btn-secondary" href="Chandrakanta_Barik_Resume_ATS.pdf" download style="text-decoration:none;display:inline-flex;align-items:center;">⬇ Download Resume</a>
+    </div>
+    <div class="hero-chips">
+      <span class="chip">🏆 GSSoC 2026</span>
+      <span class="chip">🏆 NSoC</span>
+      <span class="chip">🤖 AI Intern</span>
+      <span class="chip">☕ Java Dev</span>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <div class="photo-ring-wrap">
+      <div class="ring-outer"><div class="ring-dot"></div></div>
+      <div class="ring-mid"></div>
+      <div class="ring-inner"></div>
+      <div class="photo-glow"></div>
+      <div class="photo-frame">
+        <img src="ckk.jpg" alt="Chandrakanta Barik"
+          onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px>👨‍💻</div>'">
+      </div>
+      <div class="fb fb1"><div class="fb-dot g"></div>Open to Work</div>
+      <div class="fb fb2"><div class="fb-dot p"></div>GSSoC 2026 ✓</div>
+      <div class="fb fb3"><div class="fb-dot pk"></div>AI Intern ✓</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="section reveal" id="about">
+  <div class="sec-pre">profile</div>
+  <h2 class="sec-h">About <span class="g">Me</span></h2>
+  <div class="about-layout">
+    <div class="glass">
+      <div class="glass-corner"></div>
+      <p class="about-p">I'm <span class="hl">Chandrakanta Barik</span>, a B.Tech CSE student at BPUT, Odisha, passionate about <span class="hl">backend development</span> and scalable systems. Java and Spring Boot are my primary tools for crafting robust applications.</p>
+      <p class="about-p">Currently contributing to <span class="hl">GSSoC 2026</span> and NSoC — collaborating with developers worldwide, submitting pull requests, and building consistency through open source contributions.</p>
+      <p class="about-p">Previously interned at <span class="hl">EDU-VERSITY</span> as an AI intern, working on data processing, predictive analytics, and machine learning fundamentals using Python.</p>
+      <div class="about-bq">"Building consistency every single day. One commit at a time — because every great system starts with a single line of code."</div>
+    </div>
+    <div>
+      <div class="stats-g">
+        <div class="stat"><div class="stat-n" data-target="2">0</div><div class="stat-l">Years Coding</div></div>
+        <div class="stat"><div class="stat-n" data-target="5">0</div><div class="stat-l">Projects Built</div></div>
+        <div class="stat"><div class="stat-n">2027</div><div class="stat-l">Graduation</div></div>
+        <div class="stat"><div class="stat-n" style="-webkit-text-fill-color:var(--c2);color:var(--c2)">CSE</div><div class="stat-l">B.Tech Major</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section class="section reveal" id="skills">
+  <div class="sec-pre">tech stack</div>
+  <h2 class="sec-h">Skills &amp; <span class="g">Tools</span></h2>
+  <div class="skills-g">
+    <div class="sk"><span class="sk-i">☕</span><div class="sk-n">Java</div><div class="sk-c">language</div><div class="sk-lv lv-core">primary</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="92"></div></div></div>
+    <div class="sk"><span class="sk-i">🍃</span><div class="sk-n">Spring Boot</div><div class="sk-c">framework</div><div class="sk-lv lv-core">backend</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="80"></div></div></div>
+    <div class="sk"><span class="sk-i">🐍</span><div class="sk-n">Python</div><div class="sk-c">language</div><div class="sk-lv lv-core">scripting</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="75"></div></div></div>
+    <div class="sk"><span class="sk-i">📜</span><div class="sk-n">JavaScript</div><div class="sk-c">language</div><div class="sk-lv lv-core">frontend</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="70"></div></div></div>
+    <div class="sk"><span class="sk-i">🗄️</span><div class="sk-n">MySQL</div><div class="sk-c">database</div><div class="sk-lv lv-core">SQL</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="78"></div></div></div>
+    <div class="sk"><span class="sk-i">🌐</span><div class="sk-n">REST API</div><div class="sk-c">backend</div><div class="sk-lv lv-core">design</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="82"></div></div></div>
+    <div class="sk"><span class="sk-i">🧮</span><div class="sk-n">DSA</div><div class="sk-c">algorithms</div><div class="sk-lv lv-core">solving</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="85"></div></div></div>
+    <div class="sk"><span class="sk-i">🐙</span><div class="sk-n">Git/GitHub</div><div class="sk-c">version control</div><div class="sk-lv lv-tools">tools</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="88"></div></div></div>
+    <div class="sk"><span class="sk-i">🐳</span><div class="sk-n">Docker</div><div class="sk-c">devops</div><div class="sk-lv lv-learn">learning</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="45"></div></div></div>
+    <div class="sk"><span class="sk-i">☸️</span><div class="sk-n">Kubernetes</div><div class="sk-c">orchestration</div><div class="sk-lv lv-learn">learning</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="35"></div></div></div>
+    <div class="sk"><span class="sk-i">☁️</span><div class="sk-n">AWS</div><div class="sk-c">cloud</div><div class="sk-lv lv-learn">learning</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="40"></div></div></div>
+    <div class="sk"><span class="sk-i">🐧</span><div class="sk-n">Linux</div><div class="sk-c">devops</div><div class="sk-lv lv-tools">tools</div><div class="sk-bar-wrap"><div class="sk-bar" data-w="72"></div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section class="section reveal" id="experience">
+  <div class="sec-pre">journey</div>
+  <h2 class="sec-h">Experience &amp; <span class="g">Education</span></h2>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-dot on"></div>
+      <div class="tl-d">2026 – Present</div>
+      <div class="tl-t">Open Source Contributor</div>
+      <div class="tl-s">GirlScript Summer of Code 2026</div>
+      <div class="tl-b">Selected contributor — resolving issues, submitting pull requests, and collaborating with developers worldwide on real-world open source projects.</div>
+      <div class="tags"><span class="tag">GSSoC</span><span class="tag">Open Source</span><span class="tag">Git</span><span class="tag">Collaboration</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot p on"></div>
+      <div class="tl-d">2026 – Present</div>
+      <div class="tl-t">Contributor</div>
+      <div class="tl-s">Nexus Summer of Code (NSoC)</div>
+      <div class="tl-b">Working on community-driven projects, learning large-scale open source collaboration and contributing meaningful code to real repositories.</div>
+      <div class="tags"><span class="tag">NSoC</span><span class="tag">Community</span><span class="tag">Backend</span></div>
+    </div>
+    <div class="tl-item tl-course">
+      <div class="tl-dot on" style="border-color:#f59e0b;background:#f59e0b;box-shadow:0 0 18px #f59e0b"></div>
+      <div class="tl-d" style="color:#f59e0b">June 2026 – Dec 2026 &nbsp;·&nbsp; 6 Months</div>
+      <div class="tl-t">Full Stack Java Developer Course
+        <span class="tl-live-badge">&#9679; IN PROGRESS</span>
+      </div>
+      <div class="tl-s" style="color:#f59e0b">Naresh IT — Placement Assistance Program</div>
+      <div class="tl-b">Intensive 6-month Full Stack Java course with dedicated placement assistance. Covering Core Java, Advanced Java, Spring Boot, Hibernate, Microservices, React, MySQL, REST APIs, and real-world project development. Focused on industry-ready skills and job placement support.</div>
+      <div class="course-progress-wrap">
+        <div class="course-progress-label">
+          <span>Course Progress</span>
+          <span id="courseProgressPct">0%</span>
+        </div>
+        <div class="course-progress-bar"><div class="course-progress-fill" id="courseProgressFill" data-w="8"></div></div>
+        <div class="course-modules">
+          <span class="cm cm-done">Core Java</span>
+          <span class="cm cm-active">Advanced Java</span>
+          <span class="cm">Spring Boot</span>
+          <span class="cm">Hibernate</span>
+          <span class="cm">React</span>
+          <span class="cm">Microservices</span>
+          <span class="cm">Projects</span>
+          <span class="cm">Placement</span>
+        </div>
+      </div>
+      <div class="tags"><span class="tag" style="border-color:rgba(245,158,11,0.3);color:#f59e0b">Java</span><span class="tag" style="border-color:rgba(245,158,11,0.3);color:#f59e0b">Spring Boot</span><span class="tag" style="border-color:rgba(245,158,11,0.3);color:#f59e0b">React</span><span class="tag" style="border-color:rgba(245,158,11,0.3);color:#f59e0b">Microservices</span><span class="tag" style="border-color:rgba(245,158,11,0.3);color:#f59e0b">Naresh IT</span><span class="tag" style="border-color:rgba(245,158,11,0.3);color:#f59e0b">Placement</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot pk on"></div>
+      <div class="tl-d">Nov 2024 – Jan 2025</div>
+      <div class="tl-t">Artificial Intelligence Intern</div>
+      <div class="tl-s">EDU-VERSITY</div>
+      <div class="tl-b">Worked on data processing, exploratory data analysis, predictive analytics, and machine learning fundamentals. Gained hands-on experience with real industrial datasets.</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">ML</span><span class="tag">EDA</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot gr on"></div>
+      <div class="tl-d">2023 – 2027</div>
+      <div class="tl-t">B.Tech – Computer Science Engineering</div>
+      <div class="tl-s">Biju Patnaik University of Technology (BPUT)</div>
+      <div class="tl-b">Pursuing full engineering degree with focus on software development, algorithms, and systems design. Expected graduation: 2027.</div>
+      <div class="tags"><span class="tag">BPUT</span><span class="tag">CSE</span><span class="tag">Odisha</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section class="section reveal" id="projects">
+  <div class="sec-pre">featured work</div>
+  <h2 class="sec-h">My <span class="g">Projects</span></h2>
+  <div class="proj-g">
+    <div class="proj"><span class="proj-e">🔬</span><div class="proj-t">Breast Cancer Prediction System</div><div class="proj-d">ML-based classification for early breast cancer detection using supervised learning with accuracy metrics and data visualization.</div><div class="proj-chips"><span class="proj-chip">Python</span><span class="proj-chip">Scikit-Learn</span><span class="proj-chip">Pandas</span><span class="proj-chip">NumPy</span></div></div>
+    <div class="proj"><span class="proj-e">🌤️</span><div class="proj-t">Weather Application</div><div class="proj-d">Live weather app with API integration, real-time location-based forecasting, and a fully responsive clean interface.</div><div class="proj-chips"><span class="proj-chip">HTML</span><span class="proj-chip">CSS</span><span class="proj-chip">JavaScript</span><span class="proj-chip">API</span></div></div>
+    <div class="proj"><span class="proj-e">💱</span><div class="proj-t">Currency Converter</div><div class="proj-d">Java-based currency conversion tool with intuitive UI for seamless multi-currency exchange calculations.</div><div class="proj-chips"><span class="proj-chip">Java</span><span class="proj-chip">OOP</span></div></div>
+    <div class="proj"><span class="proj-e">🌾</span><div class="proj-t">AgriVision</div><div class="proj-d">Deep learning powered crop monitoring system featuring disease detection and plant growth analysis using computer vision models.</div><div class="proj-chips"><span class="proj-chip">Python</span><span class="proj-chip">Deep Learning</span><span class="proj-chip">CV</span></div></div>
+    <div class="proj"><span class="proj-e">🚀</span><div class="proj-t">Portfolio Website</div><div class="proj-d">This very portfolio — built with a futuristic dark design system, immersive crusher intro, and polished micro-interactions.</div><div class="proj-chips"><span class="proj-chip">HTML</span><span class="proj-chip">CSS</span><span class="proj-chip">JavaScript</span></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTS -->
+<section class="section reveal" id="certs">
+  <div class="sec-pre">certifications</div>
+  <h2 class="sec-h">My <span class="g">Credentials</span></h2>
+  <div class="certs-g">
+    <div class="cert"><div class="cert-ico">🪟</div><div><div class="cert-n">Microsoft Career Essentials in Generative AI</div><div class="cert-o">Microsoft</div></div></div>
+    <div class="cert"><div class="cert-ico">💼</div><div><div class="cert-n">Software Engineering Job Simulation</div><div class="cert-o">JPMorgan Chase</div></div></div>
+    <div class="cert"><div class="cert-ico">📊</div><div><div class="cert-n">Data Visualization Job Simulation</div><div class="cert-o">Tata Group</div></div></div>
+    <div class="cert"><div class="cert-ico">🤖</div><div><div class="cert-n">AI Literacy for Everyone</div><div class="cert-o">LinkedIn Learning</div></div></div>
+    <div class="cert"><div class="cert-ico">🌿</div><div><div class="cert-n">Software Engineering Fundamentals</div><div class="cert-o">Infosys Springboard</div></div></div>
+    <div class="cert"><div class="cert-ico">💻</div><div><div class="cert-n">Software Engineer Certificate</div><div class="cert-o">HackerRank</div></div></div>
+    <div class="cert"><div class="cert-ico">🧠</div><div><div class="cert-n">GFG 160 Days Challenge</div><div class="cert-o">GeeksforGeeks</div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GITHUB -->
+<section class="section reveal" id="github">
+  <div class="sec-pre">open source</div>
+  <h2 class="sec-h">GitHub <span class="g">Activity</span></h2>
+  <div class="gh-box">
+    <div class="gh-cmd">$ git log --author="Secret371" --oneline | head</div>
+    <div class="gh-sg">
+      <div class="gh-s"><div class="gh-n">50+</div><div class="gh-l">Contributions</div></div>
+      <div class="gh-s"><div class="gh-n">5+</div><div class="gh-l">Repositories</div></div>
+      <div class="gh-s"><div class="gh-n">2</div><div class="gh-l">OS Programs</div></div>
+    </div>
+    <a href="https://github.com/Secret371" class="gh-link" target="_blank" rel="noopener noreferrer">🐙 github.com/Secret371 →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ACHIEVEMENTS -->
+<section class="section reveal" id="achievements">
+  <div class="sec-pre">achievements</div>
+  <h2 class="sec-h">Key <span class="g">Milestones</span></h2>
+  <div class="ach-g">
+    <div class="ach"><div class="ach-ico">🏆</div><div class="ach-t">GSSoC 2026 Selected Contributor</div></div>
+    <div class="ach"><div class="ach-ico">🏅</div><div class="ach-t">NSoC Contributor</div></div>
+    <div class="ach"><div class="ach-ico">🤖</div><div class="ach-t">AI Internship — EDU-VERSITY</div></div>
+    <div class="ach"><div class="ach-ico">💼</div><div class="ach-t">500+ LinkedIn Connections</div></div>
+    <div class="ach"><div class="ach-ico">☕</div><div class="ach-t">Java DSA Consistent Learner</div></div>
+    <div class="ach"><div class="ach-ico">🌍</div><div class="ach-t">Active Open Source Contributor</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="section reveal" id="contact">
+  <div class="sec-pre">get in touch</div>
+  <h2 class="sec-h">Let's <span class="g">Connect</span></h2>
+
+  <div class="contact-cta-bar">
+    <div class="cta-bar-dot"></div>
+    <span>Open to work · Collaborations · Freelance · Just say hi!</span>
+    <div class="cta-bar-dot"></div>
+  </div>
+
+  <div class="contact-g">
+    <div>
+      <p class="contact-tagline">I'm always open to new opportunities, collaborations, and conversations. Whether you're a recruiter, fellow developer, or just curious — reach out anytime!</p>
+      <div class="quote">"Building consistency every single day. One commit at a time."</div>
+      <div class="soc-ls">
+        <a href="https://github.com/Secret371" class="soc-a" target="_blank" rel="noopener noreferrer"><span class="soc-ico">🐙</span>github.com/Secret371</a>
+        <a href="https://linkedin.com/in/ck-barik" class="soc-a" target="_blank" rel="noopener noreferrer"><span class="soc-ico">💼</span>linkedin.com/in/ck-barik</a>
+        <a href="mailto:chandrakantabarik66@gmail.com" class="soc-a"><span class="soc-ico">✉️</span>chandrakantabarik66@gmail.com</a>
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="form-header">
+        <div class="form-header-dot"></div>
+        <span>Send a Message</span>
+        <div class="form-header-line"></div>
+      </div>
+      <form class="form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="name" id="cf-name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" id="cf-email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Subject</label>
+          <input type="text" name="subject" id="cf-subject" placeholder="What's this about?" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Message</label>
+          <textarea name="message" id="cf-message" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button class="form-btn" type="submit" id="cf-btn">
+          <span>Send Message</span>
+          <span class="form-btn-arrow">&#8594;</span>
+        </button>
+        <div id="cf-status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-glow"></div>
+  <div class="footer-quote">⚡ Building Myself One Commit At A Time ⚡</div>
+  <div class="footer-name">CHANDRAKANTA BARIK</div>
+  <div class="footer-sub">Java Developer · Spring Boot · Open Source Contributor</div>
+  <div class="footer-copy">© 2026 All Rights Reserved</div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- MOUSE TRAIL -->
+<div id="trail-container"></div>
+
+<!-- AUDIO CLICK RIPPLE -->
+<div id="click-ripple-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
